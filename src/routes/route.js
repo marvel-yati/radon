@@ -1,4 +1,5 @@
 const express = require('express');
+const _ = require('lodash');
 const externalModule = require('./logger')
 
 const router = express.Router();
@@ -9,6 +10,27 @@ router.get('/test-me', function (req, res) {
     externalModule.log()
     res.send('My first ever api!')
 });
+
+router.get('/hello', function(req, res){
+// assignment 4(a)
+const month = ["january","february","march","april","may","june","july","august","september","october","novembe","december"];
+console.log(_.chunk(month,3));
+//assignment 4(b)
+const numb = [1,3,5,7,9,11,13,15,17,19];
+console.log(_.tail(numb))
+
+//assignment 4(c)
+const a =[1,1,3,4,5,4];
+const b= [3,3,4,6,3,6];
+const c= [9,8,9,7,6,5];
+const d= [1,5,6,4,5,6];
+const e= [3,4,2,5,7,4];
+console.log(_.union([a,b,c,d,e]));
+
+const  movieGenre= [["horror","The Shining"],["drama","Titanic"],["thriller", "Shutter Island"],["fantasy","Pans Labyrinth"]]
+console.log(_.fromPairs(movieGenre));
+});
+
 
 router.get('/test-me1', function (req, res) {
     res.send('My second ever api!')
