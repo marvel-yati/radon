@@ -1,7 +1,7 @@
 const express = require('express');
 const externalModule = require('./logger')
 
-//const router = express.Router();
+const router = express.Router();
 
 router.get('/test-me', function (req, res) {
     console.log('The constant in logger route has a value '+externalModule.endpoint)
@@ -10,11 +10,11 @@ router.get('/test-me', function (req, res) {
     res.send('My first ever api!')
 });
 
-const express = require('express');
-const myHelper = require('../util/helper')
-const underscore = require('underscore')
+//const express = require('express');
+//const myHelper = require('../util/helper')
+//const underscore = require('underscore')
 
-const router = express.Router();
+//const router = express.Router();
 
 router.get('/test-me', function (req, res) {
     myHelper.printDate()
