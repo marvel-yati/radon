@@ -5,6 +5,7 @@ const authorController= require("../controllers/authorController")
 const bookController= require("../controllers/bookController")
 const publisherController = require("../controllers/publisherController")
 const productController = require("../controllers/productController")
+const commonMW = require ("../middlewares/middleware1")
 
 router.get("/test-me", function (req, res) {
     res.send("My first ever api!")
@@ -20,9 +21,9 @@ router.post("/createBook", bookController.createBook  )
 
 router.post("/createProduct", productController.createProduct)
 
-router.post("/createUser", productController.createUser)
+router.post("/createUser", commonMW.mid, productController.createUser)
 
-router.post("/createOrder", productController.createOrder)
+router.post("/createOrder", commonMW.mid, productController.createOrder)
 //router.get("/getBooksData", bookController.getBooksData)
 
 //router.get("/getBooksWithAuthorDetails", bookController.getBooksWithAuthorDetails)

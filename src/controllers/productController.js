@@ -2,6 +2,7 @@ const orderModel = require("../models/orderModel")
 const userModel= require("../models/userModel")
 const productModel = require("../models/productModel")
 
+
 const createProduct = async function(req,res){
     let product = req.body
     let productCreated = await productModel.create(product)
